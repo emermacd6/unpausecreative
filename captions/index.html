@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>创作者字幕包 — UNPAUSE CREATIVE</title>
-<meta name="description" content="15 款手工设计的剪映字幕预设，不是 AI 生成。购买后可商用，免费送音效包。Essential RM49 · Pro RM99 · 创作者PRO+ RM129。">
+<title>创作者字幕包 · 开发中 — UNPAUSE CREATIVE</title>
+<meta name="description" content="创作者字幕包 · 开发中，请等待。UNPAUSE CREATIVE。">
 <meta property="og:title" content="创作者字幕包 — UNPAUSE CREATIVE">
-<meta property="og:description" content="15 款手工设计的剪映字幕预设，买了就能商用，免费送音效包。">
+<meta property="og:description" content="创作者字幕包 · 开发中，请等待。">
 <meta property="og:image" content="assets/poster.webp">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0a0a0a;--panel:#111110;--paper:#faf8f5;--paper-dim:#f0ede7;
@@ -48,7 +48,7 @@ header.site.solid .brand-logo{height:22px}
 .hdr-right a.back{opacity:.8}
 .hdr-right a.buy{color:var(--ink);background:var(--orange);border-radius:16px;padding:6px 16px;font-weight:700}
 .hdr-right a.buy:hover{background:var(--paper);color:var(--ink)}
-@media (max-width:760px){.hdr-right a.back,.hdr-right a.buy{display:none}.hdr-right{gap:18px}.hdr-right a{font-size:.86rem;padding:10px 2px}header.site,header.site.solid{padding-left:18px;padding-right:18px}}
+@media (max-width:760px){.hdr-right a.hide-m{display:none}header.site,header.site.solid{padding-left:18px;padding-right:18px}}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--cjk);font-weight:700;font-size:.95rem;padding:14px 28px;border-radius:40px;transition:all .25s ease;cursor:pointer;border:1px solid transparent;text-align:center}
 .btn.primary{background:var(--orange);color:var(--ink)}
@@ -132,36 +132,20 @@ section{position:relative}
 .bonus-tag{display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:.95rem;color:var(--ink);background:var(--orange);border-radius:6px;padding:2px 12px;white-space:nowrap}
 .bonus ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .bonus li{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;background:rgba(10,10,10,.55);border:1px solid rgba(249,97,48,.55);border-radius:20px;padding:3px 14px}
-.bonus li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
-.ic{width:1.05em;height:1.05em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em}
-.license b .ic{margin-right:6px}
-.ribbon{display:inline-flex;align-items:center;gap:5px}
-.all-incl{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-bottom:16px;font-size:.84rem;color:rgba(250,248,245,.85)}
-.all-incl strong{color:var(--grey);font-weight:600;margin-right:4px}
-.all-incl li{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-dark);border-radius:20px;padding:3px 12px}
-.all-incl li .ic{color:var(--orange);width:14px;height:14px}
+.bonus li::before{content:"✦";color:var(--orange);font-size:.8rem}
 .bonus li i{font-style:normal;font-family:var(--latin);font-weight:800;font-size:.62rem;letter-spacing:.1em;color:var(--orange)}
 .plan.hot .bonus{border-style:solid;border-width:2px;background:linear-gradient(90deg,rgba(249,97,48,.28),rgba(249,97,48,.08));box-shadow:0 0 40px rgba(249,97,48,.18)}
 .plan.hot .bonus li{font-size:1rem;padding:4px 16px}
 .pay-note{margin-top:14px;font-size:.8rem;color:var(--grey)}
 @media (max-width:900px){
   .pricing-grid{grid-template-columns:minmax(0,1fr);gap:30px}
-  .vcol{position:static;width:min(220px,60vw);margin:8px auto 0;order:2}
-  .plans{order:1}
-  .sec{padding:52px 0}
-  .sec-head{margin-bottom:24px}
+  .vcol{position:static;width:min(250px,70vw);margin:0 auto}
 }
 @media (max-width:560px){
   .plan{grid-template-columns:minmax(0,1fr);padding:20px 18px}
   .pl-buy{text-align:left;align-items:flex-start;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px}
   .pl-buy .was{width:100%}
   .pl-buy .btn{margin-left:auto}
-  .plan .btn,.btn{min-height:46px}
-  .price b{font-size:2.5rem}.plan.hot .price b{font-size:2.8rem}
-  .wrap{padding:0 18px}
-  .faq summary{padding:4px 0;min-height:44px;align-items:center}
-  .hero{padding-top:100px}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;max-width:340px;margin-left:auto;margin-right:auto}
 }
 
 /* why */
@@ -209,48 +193,29 @@ footer img{height:22px;width:auto}
 .bar span{display:block;font-size:.7rem;color:var(--grey)}
 .bar .btn{padding:11px 22px;font-size:.88rem;flex:none}}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-
-/* hero background (kept from the angular-gradient version; everything else is back to the original look) */
-.hero{background:repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 16px),linear-gradient(118deg,#0a0807 0%,#1a0c07 38%,#2d1008 64%,#0a0807 100%)}
-.hero::before{width:58vw;height:150%;left:auto;right:-6vw;top:-25%;transform:skewX(-18deg);background:linear-gradient(180deg,rgba(255,138,61,.34),rgba(249,97,48,.12) 55%,rgba(249,97,48,0));pointer-events:none}
-.hero::after{content:"SUBTITLES";position:absolute;left:50%;bottom:-3%;transform:translateX(-50%);font-family:'Anton','Noto Sans SC',sans-serif;font-size:min(24vw,340px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.075);white-space:nowrap;pointer-events:none;z-index:1}
-@media (max-width:560px){.hero::after{font-size:30vw}}
+.soon{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;border:1px solid var(--orange);border-radius:40px;padding:14px 28px;margin:6px 0 10px;background:rgba(249,97,48,.08)}
+.soon b{font-size:1.05rem;font-weight:700}.soon em{font-family:var(--latin);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.soon-dot{width:9px;height:9px;border-radius:50%;background:var(--orange);animation:sp 1.4s ease-in-out infinite}
+@keyframes sp{50%{opacity:.25;transform:scale(.7)}}
+.hero{padding-bottom:70px}
 </style>
 </head>
 <body>
 
 <header class="site" id="hdr">
-  <a href="../" aria-label="UNPAUSE CREATIVE 主站"><img class="brand-logo" src="assets/logo.png" alt="UNPAUSE CREATIVE"></a>
-  <nav class="hdr-right">
-    <a class="back hide-m" href="../">← 返回主站</a>
-    <a class="hide-m" href="#pricing">价格</a>
-    <a class="hide-m" href="#why">为什么选我们</a>
-    <a class="hide-m" href="#faq">FAQ</a>
-    <a class="buy" href="#pricing">立即购买</a>
-  </nav>
+  <a href="../index.html" aria-label="UNPAUSE CREATIVE 主站"><img class="brand-logo" src="assets/logo.png" alt="UNPAUSE CREATIVE"></a>
+  <nav class="hdr-right"><a class="back" href="../index.html">← 返回主站</a></nav>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="hero-tags">
-      <span class="chip o">剪映专业版预设</span>
-      <span class="chip">购买后可商用</span>
-      <span class="chip">免费送音效包 + 字体</span>
-    </div>
+    <div class="hero-tags"><span class="chip o">剪映专业版预设</span><span class="chip">全部亲手设计</span></div>
     <p class="cap">UNPAUSE CREATIVE · <b>Creator Subtitle Pack</b></p>
     <h1><span class="hl">15 款字幕，</span><span class="hl o">全部亲手设计。</span></h1>
     <p class="hero-en">Hand-made by our team · Not AI-generated</p>
     <p class="hero-sub">每一款都是我们自己设计、自己做动画，不是 AI 生成的模板。</p>
-    <div class="btns">
-      <a class="btn primary" href="#pricing">看价格 · RM49 起</a>
-    </div>
-    <div class="facts">
-      <div class="fact"><b>15</b><span>款手工字幕</span></div>
-      <div class="fact"><b>FREE</b><span>音效包 + 字体</span></div>
-      <div class="fact"><b>可商用</b><span>买了就能用</span></div>
-      <div class="fact"><b>RM49 起</b><span>Essential</span></div>
-    </div>
+    <div class="soon"><span class="soon-dot"></span><b>正在开发中，请等待</b><em>Coming Soon</em></div>
   </div>
 </section>
 
@@ -264,139 +229,13 @@ footer img{height:22px;width:auto}
   <div class="wall-row r" id="wallB" aria-hidden="true"></div>
 </section>
 
-<!-- PRICING: video left, prices right -->
-<section class="sec" id="pricing">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="cap">价格 · <b>Pricing</b></p>
-      <h2><span class="hl">选一个</span><span class="hl o">适合你的。</span></h2>
-    </div>
-    <div class="pricing-grid">
-      <div class="vcol reveal">
-        <div class="phone">
-          <video id="hero" src="assets/hero.mp4" poster="assets/poster.webp" autoplay muted loop playsinline preload="metadata"></video>
-          <button class="snd" id="snd" type="button" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path id="wv" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
-            <span id="sndTxt">点击开声音</span>
-          </button>
-        </div>
-        <p class="vcap">15 款字幕效果 · 免费送音效包</p>
-      </div>
-
-      <div class="plans">
-        <ul class="all-incl"><li><strong>三个配套都有</strong></li><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>图文安装教程</li><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>购买后可商用</li><li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>免费音效包</li></ul>
-        <article class="plan reveal">
-          <div>
-            <span class="lvl">基础款</span>
-            <h3>Essential</h3>
-            <ul class="pl-list">
-              <li>15 款字幕效果</li>
-            </ul>
-          </div>
-          <div class="pl-buy">
-            <div class="was">原价 <s>RM69</s></div>
-            <div class="price"><small>RM</small><b>49</b></div>
-            <span class="save">省 RM20</span>
-            <a class="btn ghost" href="#" data-plan="Essential 基础款 RM49">买 Essential</a>
-          </div>
-        </article>
-
-        <article class="plan reveal">
-          <div>
-            <span class="lvl">高级版</span>
-            <h3>Pro</h3>
-            <span class="who-for pro">适合刚入门的创作者</span>
-            <ul class="pl-list">
-              <li>含 Essential 全部字幕</li>
-              <li>配套图标与图案</li>
-            </ul>
-          </div>
-          <div class="pl-buy">
-            <div class="was">原价 <s>RM139</s></div>
-            <div class="price"><small>RM</small><b>99</b></div>
-            <span class="save">省 RM40</span>
-            <a class="btn ghost" href="#" data-plan="Pro 高级版 RM99">买 Pro</a>
-          </div>
-        </article>
-
-        <article class="plan hot reveal">
-          <span class="ribbon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>最火 · 最多人选择</span>
-          <div>
-            <span class="lvl">Essential + Pro 套装</span>
-            <h3 class="cn">创作者PRO+</h3>
-            <span class="who-for best">最适合创作者的整套方案</span>
-            <ul class="pl-list">
-              <li>Essential + Pro 全部内容</li>
-            </ul>
-          </div>
-          <div class="pl-buy">
-            <div class="was">原价 <s>RM189</s></div>
-            <div class="price"><small>RM</small><b>129</b></div>
-            <span class="save">省 RM60</span>
-            <a class="btn primary" href="#" data-plan="创作者PRO+ 套装 RM129">买 PRO+</a>
-          </div>
-          <div class="bonus">
-            <span class="bonus-tag"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>额外免费送</span>
-            <ul><li>字幕字体包 <i>FREE</i></li></ul>
-          </div>
-        </article>
-        <p class="pay-note">点击按钮会打开 WhatsApp，直接和我们确认并付款。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY + LICENSE -->
-<section class="sec usp" id="why">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="cap">我们的不同 · <b>Why us</b></p>
-      <h2><span class="hl">不是 AI 生成，</span><span class="hl o">是我们亲手做的。</span></h2>
-      <div class="who"><span>内容创作者</span><span>剪辑师</span><span>摄影师</span><span>同行做给同行</span></div>
-    </div>
-    <div class="cols4">
-      <article class="uspcard big reveal"><div class="n">01</div><h3>手工设计，不是 AI</h3><p>每一款都是我们自己设计、自己做动画。</p></article>
-      <article class="uspcard reveal"><div class="n">02</div><h3>买了就能商用</h3><p>自己的作品、客户项目、广告都可以用。</p></article>
-      <article class="uspcard reveal"><div class="n">03</div><h3>免费送音效包和字体</h3><p>15 个对位音效，创作者PRO+ 再送字体包。</p></article>
-      <article class="uspcard reveal"><div class="n">04</div><h3>拖进去，改字就用</h3><p>客户改文案，只改文字，动画和音效都不动。</p></article>
-    </div>
-    <div class="license reveal">
-      <div><b>版权归 UNPAUSE CREATIVE</b>字幕预设的设计与动画版权属于我们，购买得到的是使用授权。</div>
-      <div class="y"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>购买后可商用</b>自己的社交媒体、客户项目、广告和品牌内容，不另收授权费。</div>
-      <div class="n"><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>不可转售或分享</b>不可转售、转发、分享预设文件，或改名后当成自己的产品出售。</div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec paper" id="faq">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="cap">常见问题 · <b>FAQ</b></p>
-      <h2><span class="hl">买之前，</span><span class="hl o">先看这里。</span></h2>
-    </div>
-    <div class="faq reveal">
-      <details open><summary>这些字幕是 AI 做的吗？</summary><p>不是。每一款字幕都是 UNPAUSE 团队自己设计、自己做动画的。</p></details>
-      <details><summary>买了可以商用吗？</summary><p>可以。字幕预设的版权属于 UNPAUSE CREATIVE，购买后你可以用在商业项目里，包括自己的作品、客户项目和广告，不需要另外付授权费。但不可以转售、转发或分享预设文件本身。</p></details>
-      <details><summary>适用什么软件？怎么安装？</summary><p>预设给剪映专业版（电脑）使用。解压后放进 <code>C:\Users\你的用户名\AppData\Local\JianyingPro\User Data\Presets\Combination\Presets</code>，重新打开剪映，在「素材 → 我的 → 个人预设」里拖进时间线，改字即可。买完会附图文教程。</p></details>
-      <details><summary>三个配套有什么区别？</summary><p>Essential 是 15 款字幕效果。Pro 在这些效果的基础上加了配套图标和图案。创作者PRO+ 是最适合创作者的整套方案：Essential 和 Pro 全部内容，现价 RM129（原价 RM189，省 RM60），分开买要 RM148，套装再省 RM19。三个配套都免费送音效包，创作者PRO+ 还额外送字幕字体包。</p></details>
-      <details><summary>怎么付款、怎么收货？</summary><p>点击价格卡上的按钮会打开 WhatsApp，确认配套和付款后，我们把下载链接发给你。遇到问题也可以直接 WhatsApp 我们。</p></details>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
-    <a href="../"><img src="assets/logo.png" alt="UNPAUSE CREATIVE"></a>
-    <span>© <span id="yr"></span> UNPAUSE CREATIVE · 字幕预设版权归 UNPAUSE CREATIVE 所有，购买后可商用</span>
-    <a href="../" style="color:var(--orange)">← 返回主站</a>
+    <a href="../index.html"><img src="assets/logo.png" alt="UNPAUSE CREATIVE"></a>
+    <span>© <span id="yr"></span> UNPAUSE CREATIVE · 字幕预设版权归 UNPAUSE CREATIVE 所有</span>
+    <a href="../index.html" style="color:var(--orange)">← 返回主站</a>
   </div>
 </footer>
-
-<div class="bar" id="bar">
-  <div><b>RM129</b><s>RM189</s><span>创作者PRO+ · 送字体 + 音效包</span></div>
-  <a class="btn primary" href="#" data-plan="创作者PRO+ 套装 RM129">立即购买</a>
-</div>
 
 <script>
 (function(){
@@ -405,7 +244,7 @@ footer img{height:22px;width:auto}
   var pad=function(n){return (n<10?'0':'')+n};
 
   var hdr=$('hdr');
-  function onS(){hdr.classList.toggle('solid',window.scrollY>40);var b=$('bar');if(b)b.classList.toggle('show',window.scrollY>window.innerHeight*.6)}
+  function onS(){hdr.classList.toggle('solid',window.scrollY>40);}
   window.addEventListener('scroll',onS,{passive:true});onS();
   $('yr').textContent=new Date().getFullYear();
 
@@ -414,24 +253,6 @@ footer img{height:22px;width:auto}
   var ord=[];for(var q=0;q<15;q++)ord.push(q);
   wallRow($('wallA'),ord);
   wallRow($('wallB'),ord.slice(7).concat(ord.slice(0,7)));
-
-  /* video sound toggle */
-  var v=$('hero'),sb=$('snd'),st=$('sndTxt');
-  sb.addEventListener('click',function(){
-    v.muted=!v.muted;
-    if(!v.muted){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){})}
-    sb.setAttribute('aria-pressed',String(!v.muted));
-    st.textContent=v.muted?'点击开声音':'声音已开';
-    $('wv').style.display=v.muted?'none':'';
-  });
-  $('wv').style.display='none';
-
-  /* WhatsApp buy links */
-  document.querySelectorAll('[data-plan]').forEach(function(a){
-    var msg='Hey UNPAUSE 👋\n我想购买【字幕包 '+a.dataset.plan+'】，请问怎么付款？';
-    a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
-    a.target='_blank';a.rel='noopener';
-  });
 
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
