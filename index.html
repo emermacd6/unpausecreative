@@ -317,12 +317,6 @@
     color:var(--orange);border:1px solid rgba(249,97,48,0.5);border-radius:16px;padding:6px 12px;
   }
   header.site .navlinks a.nav-work:hover{background:var(--orange);color:var(--ink);}
-  /* creator subtitle pack link (top-right) */
-  header.site .navlinks a.nav-cap{background:var(--orange);color:var(--ink);border-radius:16px;padding:6px 14px;font-weight:700;display:inline-flex;align-items:center;gap:7px;}
-  header.site .navlinks a.nav-cap span{font-size:.55rem;letter-spacing:.1em;background:var(--ink);color:var(--orange);border-radius:8px;padding:1px 6px;}
-  header.site .navlinks a.nav-cap:hover{background:var(--paper);color:var(--ink);}
-  .cap-pill{display:none;}
-  @media (max-width:760px){ header.site .cap-pill{display:inline-flex;align-items:center;margin-left:auto;margin-right:14px;background:var(--orange);color:var(--ink);font-family:var(--font-cjk);font-weight:700;font-size:.78rem;padding:6px 14px;border-radius:16px;} header.site .navlinks{display:none;} }
   @media (max-width:760px){ header.site .navlinks a{display:none;} }
 
   /* ---------- mobile nav (hamburger + slide-in panel) ---------- */
@@ -1027,6 +1021,111 @@
   .design-bridge .mini-cards i{width:56px;height:90px;font-size:1.6rem}
   .design-bridge .mini-txt b{font-size:1.2rem}.design-bridge .mini-txt p{font-size:.88rem;margin:8px 0 14px;max-width:520px}
   @media (max-width:640px){.design-bridge{flex-direction:column;align-items:flex-start}}
+
+  /* ===== v16 portfolio ===== */
+  .pf{position:fixed;inset:0;z-index:450;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(24px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1),visibility .45s}
+  .pf.open{opacity:1;visibility:visible;transform:none}
+  .pf-bar{flex:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 32px;border-bottom:1px solid var(--line-dark);background:rgba(10,10,10,.92);backdrop-filter:blur(10px);position:relative;z-index:3}
+  .pf-left{display:flex;align-items:center;gap:20px;min-width:0}
+  .pf-back{background:none;border:1px solid var(--line-dark);color:var(--paper);font-family:var(--font-cjk);font-size:.85rem;padding:8px 16px;border-radius:30px;cursor:pointer;transition:all .2s;white-space:nowrap}
+  .pf-back:hover{border-color:var(--orange);color:var(--orange)}
+  .pf-logo{font-family:var(--font-display);letter-spacing:.14em;font-size:1.05rem}
+  .pf-tabs{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+  .pf-tab{background:none;border:1px solid var(--line-dark);color:var(--paper);font-family:var(--font-cjk);font-size:.82rem;padding:8px 14px;border-radius:30px;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .pf-tab i{font-style:normal;font-family:var(--font-latin);font-size:.68rem;color:var(--orange);transition:color .25s}
+  .pf-tab:hover{border-color:var(--orange)}
+  .pf-tab.on{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+  .pf-tab.on i{color:var(--ink)}
+  .pf-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;background:radial-gradient(ellipse at 80% 0%,rgba(249,97,48,.14),transparent 55%)}
+  .pf-wrap{max-width:1280px;margin:0 auto;padding:46px 32px 80px}
+  .pf-head{margin-bottom:34px}
+  .pf-head h2{font-size:clamp(2.4rem,7vw,5rem);margin:8px 0 12px;color:var(--paper)}.pf-head h2 span{color:var(--orange)}
+  .pf-head p{font-family:var(--font-cjk);color:var(--paper);opacity:.8;font-size:.95rem}
+  .pf-head p em{font-style:normal;color:var(--orange);margin-left:10px;font-family:var(--font-latin);font-size:.8rem;letter-spacing:.1em}
+  .pf-grid{column-count:4;column-gap:20px}
+  @media (max-width:1100px){.pf-grid{column-count:3}}
+  @media (max-width:760px){.pf-grid{column-count:2;column-gap:12px}.pf-wrap{padding:30px 16px 60px}}
+  .pf-card{display:block;width:100%;break-inside:avoid;margin:0 0 22px;animation:pfIn .6s both;animation-delay:calc(var(--n,0)*55ms)}
+  .pf-card.hide{display:none}
+  @keyframes pfIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+  .pf-card.r-p .vthumb{aspect-ratio:9/16}.pf-card.r-l .vthumb{aspect-ratio:16/9}
+  .pf-card .vmeta{flex-direction:column;gap:2px;align-items:flex-start}
+  .pf-card:hover .vplay{animation:vpulse 1.4s infinite;transform:scale(1.12)}
+  body.pf-lock{overflow:hidden}
+  .pf-open-row{margin-top:34px;text-align:center}
+  .pf-inline{color:var(--orange);margin-left:10px;white-space:nowrap}
+  .pf-inline:hover{text-decoration:underline}
+  @media (max-width:640px){.pf-bar{padding:10px 14px;flex-wrap:wrap}.pf-tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;justify-content:flex-start;padding-bottom:4px;scrollbar-width:none}.pf-back span{display:none}.pf-bar{gap:10px}}
+
+  /* ===== v17: logo-first hero with video wall ===== */
+  .h3d{height:auto!important;min-height:0!important;display:block!important;overflow:visible!important;padding:0!important;text-align:center}
+  .h3d-track{height:100vh;position:relative}
+  .h3d-sticky{position:relative;top:0;height:100vh;min-height:560px;overflow:hidden;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .hw{position:absolute;inset:-12% -6%;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;transform:translate3d(var(--wx,0px),var(--wy,0px),0) rotate(-7deg) scale(var(--ws,1.15));will-change:transform}
+  .hw-col{overflow:visible;filter:blur(var(--b,0px));animation:hwUp var(--t,80s) linear infinite}
+  .hw-in{display:flex;flex-direction:column;gap:16px}
+  @keyframes hwUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+  .wt{position:relative;border-radius:14px;overflow:hidden;background:var(--th) center/cover,linear-gradient(160deg,#2b2b2b,#111 55%,rgba(249,97,48,.5));border:1px solid rgba(255,255,255,.1);flex:none}
+  .wt-p{aspect-ratio:9/16}.wt-l{aspect-ratio:16/9}
+  .wt video,.wt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none}
+  .hw-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,10,10,.62) 0%,rgba(10,10,10,.82) 70%),linear-gradient(180deg,rgba(10,10,10,.55),transparent 22%,transparent 70%,var(--ink))}
+  .h3d-logo{position:absolute;left:50%;top:50%;width:min(640px,78vw);transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:26px;z-index:20;will-change:transform,opacity}
+  .h3d-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 40px rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(249,97,48,.25))}
+  .h3d-logo .h3d-tags{margin:0}
+  .h3d-sticky .h3d-copy{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1000px,94vw);opacity:0;pointer-events:none;z-index:25}
+  .h3d-sticky .h3d-copy.on{pointer-events:auto}
+  .h3d-sticky .h3d-copy::before{inset:-14% -10%}
+  .h3d h1 .ln b{animation:none;transform:none}
+  .h3d-sticky .scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:30}
+  @media (max-width:760px){
+    .hw{grid-template-columns:repeat(3,1fr);gap:10px;inset:-12% -10%}.hw-col:nth-child(n+4){display:none}.hw-in{gap:10px}
+    .h3d-sticky{min-height:520px}
+  }
+  .pf-wix{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:34px 0 10px;padding:26px 30px;border:1px solid var(--line-dark);border-left:4px solid var(--orange);background:linear-gradient(110deg,rgba(249,97,48,.12),transparent);transition:transform .3s ease,border-color .3s ease}
+  .pf-wix:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .pf-wix em{display:block;font-style:normal;font-family:var(--font-latin);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+  .pf-wix b{display:block;font-family:var(--font-cjk);font-size:1.25rem;font-weight:700;color:var(--paper)}
+  .pf-wix small{display:block;font-family:var(--font-cjk);font-size:.8rem;color:var(--grey);margin-top:4px}
+  .pf-wix i{font-style:normal;font-size:1.8rem;color:var(--orange)}
+  .pf-other-link{display:inline-block;margin-top:14px;font-family:var(--font-cjk);font-size:.85rem;color:var(--orange)}
+  .pf-other-link:hover{text-decoration:underline}
+
+  /* ===== v17b: horizontal accordion services ===== */
+  .acc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:34px 0 10px;transition:grid-template-columns .9s cubic-bezier(.65,0,.15,1);align-items:stretch}
+  .acc.open[data-on="1"]{grid-template-columns:1fr .09fr .09fr}.acc.open[data-on="2"]{grid-template-columns:.09fr 1fr .09fr}.acc.open[data-on="3"]{grid-template-columns:.09fr .09fr 1fr}
+  .svp{position:relative;min-width:0;overflow:hidden;border:1px solid var(--line-dark);background:#0e0e0e;min-height:440px;display:flex}
+  .svp .sv{border-top:0;padding:46px 38px;min-width:var(--bw,900px);width:var(--bw,900px);flex:none;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:30px}
+  .sv-tab{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:block;width:100%;min-height:440px;overflow:hidden;padding:30px 28px;color:var(--paper)}
+  .st-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.35),rgba(10,10,10,.92)),var(--th) center/cover,linear-gradient(160deg,#2b2b2b,#111 55%,rgba(249,97,48,.5));transition:transform .8s ease;filter:saturate(.8)}
+  .sv-tab:hover .st-bg{transform:scale(1.06)}
+  .sv-tab:focus-visible{outline:2px solid var(--orange);outline-offset:-4px}
+  .st-n{position:relative;font-style:normal;font-family:var(--font-display);font-size:5.5rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55);display:block}
+  .st-t{position:absolute;left:28px;right:28px;bottom:112px}
+  .st-t b{display:block;font-size:clamp(1.7rem,2.5vw,2.4rem);line-height:1.05}
+  .st-t em{display:block;font-style:normal;font-family:var(--font-cjk);margin-top:8px;color:var(--orange);font-weight:500}
+  .st-open{position:absolute;left:28px;right:28px;bottom:28px;font-family:var(--font-cjk);font-size:.88rem;opacity:.85}
+  .st-open u{display:block;text-decoration:none;margin-top:10px;color:var(--orange);font-weight:500}
+  .st-v{display:none}
+  .svp .svb{display:none}.svp .sv-info{position:static}
+  .svp.on{display:block}.svp.on .sv-tab{display:none}.svp{will-change:contents}
+  .svp.on .svb{display:grid;position:relative}
+  .svp.on .reveal{opacity:1;transform:none}
+  @keyframes openLR{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .sv-close{all:unset;cursor:pointer;position:absolute;right:20px;top:16px;z-index:5;font-family:var(--font-cjk);font-size:.8rem;padding:7px 14px;border:1px solid var(--line-dark);border-radius:30px;background:#0e0e0e}
+  .sv-close:hover{border-color:var(--orange);color:var(--orange)}
+  .acc.open .svp:not(.on) .sv-tab{padding:18px 0;text-align:center;min-height:100%}
+  .acc.open .svp:not(.on) .st-t,.acc.open .svp:not(.on) .st-open{display:none}
+  .acc.open .svp:not(.on) .st-n{font-size:2.2rem;-webkit-text-stroke:1px var(--orange)}
+  .acc.open .svp:not(.on) .st-v{display:block;position:absolute;left:50%;top:90px;transform:translateX(-50%);writing-mode:vertical-rl;font-family:var(--font-display);letter-spacing:.14em;font-size:1rem;white-space:nowrap}
+  .acc.open .svp:not(.on) .st-bg{filter:saturate(.5) brightness(.7)}
+  @media (max-width:900px){
+    .acc,.acc.open[data-on]{grid-template-columns:1fr!important;gap:12px}
+    .svp{min-height:0;display:block}.sv-tab{min-height:300px}
+    .acc.open .svp:not(.on) .sv-tab{padding:30px 28px;min-height:300px;text-align:left}
+    .acc.open .svp:not(.on) .st-t,.acc.open .svp:not(.on) .st-open{display:block}.acc.open .svp:not(.on) .st-v{display:none}
+    .acc.open .svp:not(.on) .st-n{font-size:5.5rem;-webkit-text-stroke:1px rgba(255,255,255,.55)}
+    .svp .sv{min-width:0;width:auto;padding:56px 18px 30px;grid-template-columns:1fr}.svp .sv h3.disp{font-size:clamp(1.5rem,8vw,2.2rem)}
+  }
 </style>
 </head>
 <body>
@@ -1077,13 +1176,12 @@
   </a><div class="hdr-soc"><a class="soc" href="https://www.instagram.com/emer__6/" target="_blank" rel="noopener" aria-label="@emer__6" title="@emer__6"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg><span>@emer__6</span></a><a class="soc" href="https://www.instagram.com/unpause.creative/" target="_blank" rel="noopener" aria-label="@unpause.creative" title="@unpause.creative"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg><span>@unpause.creative</span></a></div></div>
   <nav class="navlinks">
     <a href="#services">Services</a>
+    <a href="#portfolio" class="open-pf">Portfolio</a>
     <a href="#experience">Clients</a>
     <a href="#why">Why Us</a>
     <a href="#founder">About</a>
     <a href="#contact" class="nav-work">PM Us</a>
-    <a href="captions/" class="nav-cap">字幕包 <span>NEW</span></a>
   </nav>
-  <a href="captions/" class="cap-pill">字幕包</a>
   <button id="mobileNavToggle" class="mobile-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -1092,15 +1190,30 @@
 <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
 <nav id="mobileNavPanel" class="mobile-nav-panel" aria-hidden="true">
   <a href="#services">Services</a>
+  <a href="#portfolio" class="open-pf">Portfolio</a>
   <a href="#experience">Clients</a>
   <a href="#why">Why Us</a>
   <a href="#founder">About</a>
   <a href="#contact">PM Us</a>
-  <a href="captions/" style="color:var(--orange)">字幕包 NEW</a>
 </nav>
 
 
 
+<!-- PORTFOLIO (full-screen view, opens with #portfolio) -->
+<div id="portfolio" class="pf" aria-hidden="true" role="dialog" aria-label="Portfolio">
+  <div class="pf-bar">
+    <div class="pf-left"><button type="button" class="pf-back" id="pfBack">← <span>返回网站</span></button><span class="pf-logo">UNPAUSE</span></div>
+    <div class="pf-tabs" id="pfTabs" role="tablist"><button type="button" class="pf-tab on" data-cat="all">全部<i>0</i></button><button type="button" class="pf-tab" data-cat="reels">营销短视频<i>0</i></button><button type="button" class="pf-tab" data-cat="ip">个人品牌 IP<i>0</i></button><button type="button" class="pf-tab" data-cat="ai">AI 动态视觉<i>0</i></button><button type="button" class="pf-tab" data-cat="edu">教育与金融<i>0</i></button><button type="button" class="pf-tab" data-cat="event">活动与预告片<i>0</i></button></div>
+  </div>
+  <div class="pf-scroll" id="pfScroll">
+    <div class="pf-wrap">
+      <div class="pf-head"><span class="en-cap">Portfolio</span><h2 class="disp">Our <span>Work</span></h2><p>全部作品都在这里，点击即可观看。右上角可以按类别筛选。<em id="pfCount"></em></p></div>
+      <div class="pf-grid" id="pfGrid"><button class="vcard pf-card r-p" type="button" data-vid="1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT" data-title="Marketing Reel 01" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 01</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="114ML7km4aSp53V9syHNFAX3F1MsI7rH9" data-title="Marketing Reel 02" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 02</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM" data-title="Marketing Reel 03" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 03</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K" data-title="Marketing Reel 04" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 04</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" data-title="Personal Brand IP" data-sub="个人品牌 IP" data-seg="" data-r="p" data-cat="ip" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Personal Brand IP</b><em>个人品牌 IP</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6" data-title="Dr. Chong" data-sub="个人品牌 IP" data-seg="" data-r="l" data-cat="ip" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Dr. Chong</b><em>个人品牌 IP</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" data-title="AI Motion Graphic 01" data-sub="AI 动态视觉" data-seg="0:22 – 0:42" data-r="p" data-cat="ai" data-hall="1"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="vplay"></span><span class="vseg">精选片段 0:22 – 0:42</span></span><span class="vmeta"><b>AI Motion Graphic 01</b><em>AI 动态视觉</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0" data-title="AI Motion Graphic 02" data-sub="AI 动态视觉" data-seg="0:34 – 0:39" data-r="p" data-cat="ai" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480)"><span class="vplay"></span><span class="vseg">精选片段 0:34 – 0:39</span></span><span class="vmeta"><b>AI Motion Graphic 02</b><em>AI 动态视觉</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF" data-title="AI 房地产" data-sub="AI 动态视觉" data-seg="" data-r="l" data-cat="ai" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>AI 房地产</b><em>AI 动态视觉</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq" data-title="TX 投资交易商学院 · 01" data-sub="教育与金融" data-seg="" data-r="l" data-cat="edu" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院 · 01</b><em>教育与金融</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1A32CtPChhSigNk79SVDF67lKEzSZHXWi" data-title="TX 投资交易商学院 · 02" data-sub="教育与金融" data-seg="" data-r="l" data-cat="edu" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1A32CtPChhSigNk79SVDF67lKEzSZHXWi&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院 · 02</b><em>教育与金融</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX" data-title="TX 投资交易商学院 · 03" data-sub="教育与金融" data-seg="" data-r="l" data-cat="edu" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院 · 03</b><em>教育与金融</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="16w6tKYsIjBHlDyZVEswmzDI97eTLQolc" data-title="TX 投资交易商学院 · 04" data-sub="教育与金融" data-seg="" data-r="l" data-cat="edu" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=16w6tKYsIjBHlDyZVEswmzDI97eTLQolc&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院 · 04</b><em>教育与金融</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0" data-title="Gx Bank" data-sub="教育与金融" data-seg="" data-r="l" data-cat="edu" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Gx Bank</b><em>教育与金融</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv" data-title="Togeya 预告片" data-sub="活动与预告片" data-seg="" data-r="l" data-cat="event" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Togeya 预告片</b><em>活动与预告片</em></span></button><button class="vcard pf-card r-l" type="button" data-vid="1vMybvVv19NG42--yd1I4KsGgTAyf7Eug" data-title="珠心算比赛活动" data-sub="活动与预告片" data-seg="" data-r="l" data-cat="event" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1vMybvVv19NG42--yd1I4KsGgTAyf7Eug&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>珠心算比赛活动</b><em>活动与预告片</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1nKsZUQFLsGIJ825e17izU7PceV_pc7M9" data-title="房地产 01" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1nKsZUQFLsGIJ825e17izU7PceV_pc7M9&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>房地产 01</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1SAhc4K9DU1tfShjisCA2RQoxNBq8rB_q" data-title="房地产 02" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1SAhc4K9DU1tfShjisCA2RQoxNBq8rB_q&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>房地产 02</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="11THGRf6r5wZnF3ZfgyPG8OG6xJJ2UV-b" data-title="汽车美容" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=11THGRf6r5wZnF3ZfgyPG8OG6xJJ2UV-b&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>汽车美容</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1qfRZyMzZgSlyXD8MMzayxXOcVC7EPNOe" data-title="Marketing Reel 05" data-sub="营销短视频" data-seg="" data-r="p" data-cat="reels" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1qfRZyMzZgSlyXD8MMzayxXOcVC7EPNOe&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 05</b><em>营销短视频</em></span></button><button class="vcard pf-card r-p" type="button" data-vid="1njOlnWaVEEeZVSxY0PGs4YtGfnA7S5C_" data-title="Personal Brand IP 02" data-sub="个人品牌 IP" data-seg="" data-r="p" data-cat="ip" data-hall="0"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1njOlnWaVEEeZVSxY0PGs4YtGfnA7S5C_&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Personal Brand IP 02</b><em>个人品牌 IP</em></span></button></div>
+      <a class="pf-wix" href="https://emerspace.wixsite.com/emer/project1" target="_blank" rel="noopener"><span><em>More from Emer</em><b>Emer 过往累积的作品</b><small>Past works · 在新窗口打开</small></span><i>↗</i></a>
+      <div class="rcta"><p>想了解更多服务的价格与数量？直接 PM 我们，按你的项目需求讨论。</p><a class="svc-discuss" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E5%AE%8C%E4%BA%86%E4%BD%A0%E4%BB%AC%E7%9A%84%20Portfolio%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener">PM 我们</a></div>
+    </div>
+  </div>
+</div>
 <div id="vModal" class="vmodal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="vbox">
     <button class="vclose" id="vClose" type="button" aria-label="Close">&times;</button>
@@ -1114,30 +1227,17 @@
   <div class="sb"><i id="sbi2"></i></div>
 </div>
 
-<!-- HERO (depth) -->
+<!-- HERO (logo first, video wall) -->
 <section class="h3d" id="top">
-  <div class="h3d-bg" aria-hidden="true"><div class="h3d-glow" id="h3dGlow"></div><div class="h3d-floor"></div><div class="h3d-word" data-d=".1">UNPAUSE</div></div>
-  <div class="h3d-stage" id="h3dStage" aria-hidden="true"><div class="ph" style="--x:7%;--y:66%;--w:15vw;--d:0.95;--r:-9deg;--b:5px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480);animation-delay:0.13s,-5.7s"><i class="ph-bar"></i></div></div><div class="ph" style="--x:18%;--y:27%;--w:10.5vw;--d:0.55;--r:-5deg;--b:0px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480);animation-delay:0.32s,-3.3s"><i class="ph-bar"></i></div></div><div class="ph" style="--x:31%;--y:72%;--w:7.5vw;--d:0.2;--r:5deg;--b:2px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480);animation-delay:0.50s,-1.2s"><i class="ph-bar"></i></div></div><div class="ph" style="--x:93%;--y:60%;--w:15vw;--d:0.95;--r:9deg;--b:5px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480);animation-delay:0.13s,-5.7s"><i class="ph-bar"></i></div></div><div class="ph" style="--x:82%;--y:25%;--w:10.5vw;--d:0.55;--r:5deg;--b:0px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480);animation-delay:0.32s,-3.3s"><i class="ph-bar"></i></div></div><div class="ph" style="--x:69%;--y:74%;--w:7.5vw;--d:0.2;--r:-5deg;--b:2px"><div class="ph-in" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480);animation-delay:0.50s,-1.2s"><i class="ph-bar"></i></div></div></div>
-  <div class="h3d-copy" id="h3dCopy">
-    <p class="h3d-tags"><span>Marketing Reels</span><i></i><span>Personal Brand IP</span><i></i><span>AI Motion Graphic</span></p>
-    <h1 class="disp"><span class="ln"><b>We create</b></span><span class="ln"><b class="accent">reasons</b></span><span class="ln"><b>to watch.</b></span></h1>
-    <p class="h3d-zh">不止被看见，更让人看见不同。</p>
-    <div class="h3d-btns"><a class="svc-discuss big" href="#services">看我们的作品 ↓</a><a class="ghost" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E4%BD%A0%E4%BB%AC%E7%9A%84%E6%9C%8D%E5%8A%A1%EF%BC%8C%E6%83%B3%E8%AE%A8%E8%AE%BA%E6%88%91%E7%9A%84%E9%A1%B9%E7%9B%AE%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener">PM 我们</a></div>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="ln"></span></div>
-</section>
-<!-- 04 OVERVIEW (5-minute read) -->
-<section class="dark overview" id="overview">
-  <div class="wrap">
-    <div class="eyebrow reveal"><span class="en-cap">In 5 minutes</span><span class="rule"></span></div>
-    <h2 class="ov-h reveal">5 分钟，看懂我们能为你做什么</h2>
-    <div class="ov-grid">
-      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-briefcase"/></svg></span><b>我们做什么</b><p>三项服务：营销短视频、个人品牌 IP 内容、AI Motion Graphic 动态视觉。</p></div>
-      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-bulb"/></svg></span><b>为什么不一样</b><p>先想清楚“为什么有人要看”，再拍摄、再设计，而不只是拍完剪完交片。</p></div>
-      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-palette"/></svg></span><b>你会得到什么</b><p>有创意、有画面、有方向的内容，视觉按你的品牌、颜色与行业量身制作。</p></div>
+  <div class="h3d-track" id="h3dTrack">
+    <div class="h3d-sticky" id="h3dSticky">
+      <div class="hw" id="hw" aria-hidden="true"><div class="hw-col" style="--t:95s;--b:3px;animation-direction:normal"><div class="hw-in"><div class="wt wt-p" data-vid="1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"></div><div class="wt wt-l" data-vid="1A32CtPChhSigNk79SVDF67lKEzSZHXWi" style="--th:url(https://drive.google.com/thumbnail?id=1A32CtPChhSigNk79SVDF67lKEzSZHXWi&sz=w480)"></div><div class="wt wt-p" data-vid="1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"></div><div class="wt wt-l" data-vid="1A32CtPChhSigNk79SVDF67lKEzSZHXWi" style="--th:url(https://drive.google.com/thumbnail?id=1A32CtPChhSigNk79SVDF67lKEzSZHXWi&sz=w480)"></div></div></div><div class="hw-col" style="--t:70s;--b:0px;animation-direction:reverse"><div class="hw-in"><div class="wt wt-p" data-vid="114ML7km4aSp53V9syHNFAX3F1MsI7rH9" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480)"></div><div class="wt wt-l" data-vid="1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX" style="--th:url(https://drive.google.com/thumbnail?id=1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX&sz=w480)"></div><div class="wt wt-p" data-vid="114ML7km4aSp53V9syHNFAX3F1MsI7rH9" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480)"></div><div class="wt wt-l" data-vid="1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX" style="--th:url(https://drive.google.com/thumbnail?id=1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX&sz=w480)"></div></div></div><div class="hw-col" style="--t:110s;--b:1px;animation-direction:normal"><div class="hw-in"><div class="wt wt-p" data-vid="1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480)"></div><div class="wt wt-l" data-vid="16w6tKYsIjBHlDyZVEswmzDI97eTLQolc" style="--th:url(https://drive.google.com/thumbnail?id=16w6tKYsIjBHlDyZVEswmzDI97eTLQolc&sz=w480)"></div><div class="wt wt-p" data-vid="1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480)"></div><div class="wt wt-l" data-vid="16w6tKYsIjBHlDyZVEswmzDI97eTLQolc" style="--th:url(https://drive.google.com/thumbnail?id=16w6tKYsIjBHlDyZVEswmzDI97eTLQolc&sz=w480)"></div></div></div><div class="hw-col" style="--t:80s;--b:0px;animation-direction:reverse"><div class="hw-in"><div class="wt wt-p" data-vid="1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480)"></div><div class="wt wt-l" data-vid="1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6" style="--th:url(https://drive.google.com/thumbnail?id=1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6&sz=w480)"></div><div class="wt wt-l" data-vid="13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0" style="--th:url(https://drive.google.com/thumbnail?id=13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0&sz=w480)"></div><div class="wt wt-p" data-vid="1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480)"></div><div class="wt wt-l" data-vid="1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6" style="--th:url(https://drive.google.com/thumbnail?id=1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6&sz=w480)"></div><div class="wt wt-l" data-vid="13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0" style="--th:url(https://drive.google.com/thumbnail?id=13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0&sz=w480)"></div></div></div><div class="hw-col" style="--t:100s;--b:1px;animation-direction:normal"><div class="hw-in"><div class="wt wt-p" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"></div><div class="wt wt-l" data-vid="1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF" style="--th:url(https://drive.google.com/thumbnail?id=1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF&sz=w480)"></div><div class="wt wt-l" data-vid="1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv" style="--th:url(https://drive.google.com/thumbnail?id=1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv&sz=w480)"></div><div class="wt wt-p" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"></div><div class="wt wt-l" data-vid="1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF" style="--th:url(https://drive.google.com/thumbnail?id=1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF&sz=w480)"></div><div class="wt wt-l" data-vid="1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv" style="--th:url(https://drive.google.com/thumbnail?id=1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv&sz=w480)"></div></div></div><div class="hw-col" style="--t:75s;--b:3px;animation-direction:reverse"><div class="hw-in"><div class="wt wt-p" data-vid="1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480)"></div><div class="wt wt-l" data-vid="1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq" style="--th:url(https://drive.google.com/thumbnail?id=1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq&sz=w480)"></div><div class="wt wt-l" data-vid="1vMybvVv19NG42--yd1I4KsGgTAyf7Eug" style="--th:url(https://drive.google.com/thumbnail?id=1vMybvVv19NG42--yd1I4KsGgTAyf7Eug&sz=w480)"></div><div class="wt wt-p" data-vid="1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480)"></div><div class="wt wt-l" data-vid="1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq" style="--th:url(https://drive.google.com/thumbnail?id=1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq&sz=w480)"></div><div class="wt wt-l" data-vid="1vMybvVv19NG42--yd1I4KsGgTAyf7Eug" style="--th:url(https://drive.google.com/thumbnail?id=1vMybvVv19NG42--yd1I4KsGgTAyf7Eug&sz=w480)"></div></div></div></div>
+      <div class="hw-shade" aria-hidden="true"></div>
+      <div class="h3d-bg" aria-hidden="true"><div class="h3d-glow" id="h3dGlow"></div></div>
+      <div class="h3d-logo" id="h3dLogo"><img id="h3dLogoImg" alt="UNPAUSE CREATIVE"><p class="h3d-tags"><span>Marketing Reels</span><i></i><span>Personal Brand IP</span><i></i><span>AI Motion Graphic</span></p></div>
+      <div id="h3dCopy" hidden></div>
+      <div class="scroll-cue" id="h3dCue"><span>向下滑 · 看我们的服务</span><span class="ln"></span></div>
     </div>
-    <div class="ov-path reveal"><span class="en-cap">建议这样看</span>
-      <a href="#services"><i>1</i>看服务与作品<em>约 2 分钟</em></a><a href="#design-lab"><i>2</i>亲手试试设计<em>约 1 分钟</em></a><a href="#why"><i>3</i>为什么选我们<em>约 1 分钟</em></a><a href="#contact"><i>4</i>PM 我们<em>随时</em></a></div>
   </div>
 </section>
 
@@ -1147,8 +1247,8 @@
     <span id="work" class="anchor" aria-hidden="true"></span>
     <div class="eyebrow reveal"><span class="en-cap">Services</span><span class="rule"></span></div>
     <p class="svc-lead reveal">我们不只是拍摄和剪辑——从创意概念、内容策略，到画面执行，一起把你想说的变成别人愿意看的内容。</p>
-    <p class="svc-sub reveal">Three services. See what the finished work looks like.</p>
-    <article class="sv" id="svc-01" >
+    <p class="svc-sub reveal">点开一项服务，看里面的影片和细节。 <a class="pf-inline open-pf" href="#portfolio">查看全部作品 →</a></p>
+    <div class="acc" id="acc"><article class="svp" id="svc-01"><button type="button" class="sv-tab" aria-expanded="false" aria-controls="svc-01-b" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"><span class="st-bg"></span><i class="st-n">1</i><span class="st-t"><b class="disp">Marketing Reels</b><em>营销短视频</em></span><span class="st-v">Marketing Reels</span><span class="st-open">让产品与品牌，被更多人看见。<u>点击打开 →</u></span></button><div class="sv svb" id="svc-01-b"><button type="button" class="sv-close" aria-label="收起">收起 ✕</button>
       <div class="sv-num" aria-hidden="true" data-par="-.12">1</div>
       <div class="sv-info reveal">
         <span class="svc-badge"><svg class="icon "><use href="#i-camera"/></svg></span><span class="svc-num">Service 1</span>
@@ -1161,10 +1261,10 @@
       </div>
       <div class="sv-works reveal">
         <div class="sv-head"><span></span><span class="sv-arrows"><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next">→</button></span></div>
-        <div class="sv-rail"><button class="vcard" type="button" data-vid="1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT" data-title="Marketing Reel 01" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 01</b></span></button><button class="vcard" type="button" data-vid="114ML7km4aSp53V9syHNFAX3F1MsI7rH9" data-title="Marketing Reel 02" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 02</b></span></button><button class="vcard" type="button" data-vid="1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM" data-title="Marketing Reel 03" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 03</b></span></button><button class="vcard" type="button" data-vid="1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K" data-title="Marketing Reel 04" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 04</b></span></button><a class="vmore" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E4%BA%86%E3%80%8CMarketing%20Reels%E3%80%8D%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener"><span class="vm-plus">+</span><b>想看更多？</b><em>PM 我们，了解价格与数量</em></a></div>
+        <div class="sv-rail"><button class="vcard" type="button" data-vid="1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT" data-title="Marketing Reel 01" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 01</b></span></button><button class="vcard" type="button" data-vid="114ML7km4aSp53V9syHNFAX3F1MsI7rH9" data-title="Marketing Reel 02" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=114ML7km4aSp53V9syHNFAX3F1MsI7rH9&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 02</b></span></button><button class="vcard" type="button" data-vid="1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM" data-title="Marketing Reel 03" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1r62ehPGu-B7WO88LsIaRN6_IxFJwtwfM&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 03</b></span></button><button class="vcard" type="button" data-vid="1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K" data-title="Marketing Reel 04" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1ugD5e-M-rIXK2U8IfwPe2by7koGDo00K&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 04</b></span></button><button class="vcard" type="button" data-vid="1nKsZUQFLsGIJ825e17izU7PceV_pc7M9" data-title="房地产 01" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1nKsZUQFLsGIJ825e17izU7PceV_pc7M9&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>房地产 01</b></span></button><button class="vcard" type="button" data-vid="1SAhc4K9DU1tfShjisCA2RQoxNBq8rB_q" data-title="房地产 02" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1SAhc4K9DU1tfShjisCA2RQoxNBq8rB_q&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>房地产 02</b></span></button><button class="vcard" type="button" data-vid="11THGRf6r5wZnF3ZfgyPG8OG6xJJ2UV-b" data-title="汽车美容" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=11THGRf6r5wZnF3ZfgyPG8OG6xJJ2UV-b&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>汽车美容</b></span></button><button class="vcard" type="button" data-vid="1qfRZyMzZgSlyXD8MMzayxXOcVC7EPNOe" data-title="Marketing Reel 05" data-sub="Marketing Reels" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1qfRZyMzZgSlyXD8MMzayxXOcVC7EPNOe&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Marketing Reel 05</b></span></button><a class="vmore" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E4%BA%86%E3%80%8CMarketing%20Reels%E3%80%8D%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener"><span class="vm-plus">+</span><b>想看更多？</b><em>PM 我们，了解价格与数量</em></a></div>
       </div>
-    </article>
-    <article class="sv" id="svc-02" >
+    </div></article>
+    <article class="svp" id="svc-02"><button type="button" class="sv-tab" aria-expanded="false" aria-controls="svc-02-b" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="st-bg"></span><i class="st-n">2</i><span class="st-t"><b class="disp">Personal Brand IP</b><em>个人品牌 IP 内容打造</em></span><span class="st-v">Personal Brand IP</span><span class="st-open">让更多人认识你和你的专业。<u>点击打开 →</u></span></button><div class="sv svb" id="svc-02-b"><button type="button" class="sv-close" aria-label="收起">收起 ✕</button>
       <div class="sv-num" aria-hidden="true" data-par="-.12">2</div>
       <div class="sv-info reveal">
         <span class="svc-badge"><svg class="icon "><use href="#i-user"/></svg></span><span class="svc-num">Service 2</span>
@@ -1177,10 +1277,10 @@
       </div>
       <div class="sv-works reveal">
         <div class="sv-head"><span></span><span class="sv-arrows"><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next">→</button></span></div>
-        <div class="sv-rail"><button class="vcard" type="button" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" data-title="Personal Brand IP" data-sub="Personal Brand IP" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Personal Brand IP</b></span></button><a class="vmore" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E4%BA%86%E3%80%8CPersonal%20Brand%20IP%E3%80%8D%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener"><span class="vm-plus">+</span><b>想看更多？</b><em>PM 我们，了解价格与数量</em></a></div>
+        <div class="sv-rail"><button class="vcard" type="button" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" data-title="Personal Brand IP" data-sub="Personal Brand IP" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Personal Brand IP</b></span></button><button class="vcard" type="button" data-vid="1njOlnWaVEEeZVSxY0PGs4YtGfnA7S5C_" data-title="Personal Brand IP 02" data-sub="Personal Brand IP" data-seg=""><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1njOlnWaVEEeZVSxY0PGs4YtGfnA7S5C_&sz=w480)"><span class="vplay"></span></span><span class="vmeta"><b>Personal Brand IP 02</b></span></button><a class="vmore" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E4%BA%86%E3%80%8CPersonal%20Brand%20IP%E3%80%8D%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener"><span class="vm-plus">+</span><b>想看更多？</b><em>PM 我们，了解价格与数量</em></a></div>
       </div>
-    </article>
-    <article class="sv" id="svc-03" >
+    </div></article>
+    <article class="svp" id="svc-03"><button type="button" class="sv-tab" aria-expanded="false" aria-controls="svc-03-b" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480)"><span class="st-bg"></span><i class="st-n">3</i><span class="st-t"><b class="disp">AI Motion Graphic</b><em>AI 动态视觉设计</em></span><span class="st-v">AI Motion Graphic</span><span class="st-open">把想法变成有吸引力的画面。<u>点击打开 →</u></span></button><div class="sv svb" id="svc-03-b"><button type="button" class="sv-close" aria-label="收起">收起 ✕</button>
       <div class="sv-num" aria-hidden="true" data-par="-.12">3</div>
       <div class="sv-info reveal">
         <span class="svc-badge"><svg class="icon "><use href="#i-spark"/></svg></span><span class="svc-num">Service 3</span>
@@ -1195,7 +1295,7 @@
         <div class="sv-head"><span></span><span class="sv-arrows"><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next">→</button></span></div>
         <div class="sv-rail"><button class="vcard" type="button" data-vid="1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB" data-title="AI Motion Graphic 01" data-sub="AI Motion Graphic" data-seg="0:22 – 0:42"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1eQjLUQ_13zqQDjrnmE-5T9EFj_i1woWB&sz=w480)"><span class="vplay"></span><span class="vseg">精选片段 0:22 – 0:42</span></span><span class="vmeta"><b>AI Motion Graphic 01</b></span></button><button class="vcard" type="button" data-vid="1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0" data-title="AI Motion Graphic 02" data-sub="AI Motion Graphic" data-seg="0:34 – 0:39"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1avSh6s-ULmvPr8K_1zgvSzJ3x0YDebo0&sz=w480)"><span class="vplay"></span><span class="vseg">精选片段 0:34 – 0:39</span></span><span class="vmeta"><b>AI Motion Graphic 02</b></span></button><a class="vmore" href="https://wa.me/60176816456?text=Hey%20UNPAUSE%20%F0%9F%91%8B%0A%E6%88%91%E7%9C%8B%E4%BA%86%E3%80%8CAI%20Motion%20Graphic%E3%80%8D%E7%9A%84%E4%BD%9C%E5%93%81%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%95%B0%E9%87%8F%E3%80%82%0A%0A%E5%93%81%E7%89%8C%20/%20%E5%85%AC%E5%8F%B8%EF%BC%9A%0A%E6%83%B3%E5%81%9A%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A" target="_blank" rel="noopener"><span class="vm-plus">+</span><b>想看更多？</b><em>PM 我们，了解价格与数量</em></a></div>
       </div>
-    </article>
+    </div></article></div>
     <div class="asup reveal" id="asup">
       <div class="asup-head"><span class="svc-star big"><svg class="icon"><use href="#i-spark"/></svg>Additional Support</span><h3 class="disp asup-h">More than <span>reels.</span></h3><p>除了三项核心服务，我们也按项目需求提供以下支持——不是固定套餐，按你的项目一起讨论。</p></div>
       <div class="acards"><article class="acard"><div class="avis"><svg viewBox="0 0 200 120"><defs><radialGradient id="sp" cx="50%" cy="0%" r="90%"><stop offset="0" stop-color="#f96130" stop-opacity=".55"/><stop offset="1" stop-color="#f96130" stop-opacity="0"/></radialGradient></defs><path d="M70 0h60l40 120H30z" fill="url(#sp)"/><g fill="#fff" opacity=".9"><circle cx="100" cy="66" r="9"/><path d="M82 112c0-16 8-27 18-27s18 11 18 27z"/></g><g fill="#fff" opacity=".35"><circle cx="58" cy="76" r="7"/><path d="M45 112c0-12 6-20 13-20s13 8 13 20z"/><circle cx="142" cy="76" r="7"/><path d="M129 112c0-12 6-20 13-20s13 8 13 20z"/></g></svg></div><div class="abody"><span class="aico"><svg class="icon"><use href="#i-people"/></svg></span><h4>艺人 / 演员安排</h4><p>按项目需要，为你的内容安排合适的出镜人选。</p></div><span class="anum">1</span></article><article class="acard"><div class="avis"><div class="bd"><div class="sw"><i style="background:#f96130"></i><i style="background:#fff"></i><i style="background:#2a2a2a"></i><i style="background:#ffb199"></i></div><div class="pt"></div><div class="sub">字幕样式 Aa</div><div class="mo"><b></b><b></b><b></b></div></div></div><div class="abody"><span class="aico"><svg class="icon"><use href="#i-palette"/></svg></span><h4>品牌专属视觉设计</h4><p>为你的品牌定制视觉语言——图案、字幕、颜色与 Motion Graphic，全部包含在内。</p><div class="achips"><span><svg class="icon"><use href="#i-palette"/></svg>颜色</span><span><svg class="icon"><use href="#i-subtitle"/></svg>字幕</span><span><svg class="icon"><use href="#i-layers"/></svg>图案</span><span><svg class="icon"><use href="#i-wave"/></svg>Motion Graphic</span></div></div><span class="anum">2</span></article><article class="acard"><div class="avis"><svg viewBox="0 0 200 120"><g fill="none" stroke="#fff" stroke-width="2" opacity=".85"><path d="M40 30v-12h14M160 30v-12h-14M40 90v12h14M160 90v12h-14"/><circle cx="100" cy="60" r="16"/></g><circle cx="100" cy="60" r="4" fill="#f96130" class="rec"/></svg></div><div class="abody"><span class="aico"><svg class="icon"><use href="#i-camera"/></svg></span><h4>额外拍摄与制作需求</h4><p>项目需要更多拍摄、更多制作内容时，可以按需求一起讨论。</p></div><span class="anum">3</span></article><article class="acard"><div class="avis"><svg viewBox="0 0 200 120"><g fill="#f96130"><rect class="bar" x="40" y="70" width="18" height="40"/><rect class="bar" x="72" y="55" width="18" height="55"/><rect class="bar" x="104" y="62" width="18" height="48"/><rect class="bar" x="136" y="40" width="18" height="70"/></g></svg></div><div class="abody"><span class="aico"><svg class="icon"><use href="#i-megaphone"/></svg></span><h4>广告投放与营销支持</h4><p>内容做好之后，协助规划投放与营销推广。</p><span class="aTag">按项目报价</span></div><span class="anum">4</span></article></div>
@@ -1204,6 +1304,21 @@
       <div class="mini-cards" aria-hidden="true"><i style="--h:0"><svg class="icon"><use href="#i-house"/></svg></i><i style="--h:140"><svg class="icon"><use href="#i-car"/></svg></i><i style="--h:260"><svg class="icon"><use href="#i-chart"/></svg></i></div>
       <div class="mini-txt"><b><svg class="icon"><use href="#i-palette"/></svg> 属于你品牌的视觉语言</b><p>我们会根据你的品牌、颜色和行业，制作对应的图标、颜色、设计与动态视觉。亲手试一试，马上看到效果。</p><a class="svc-discuss big" href="#design-lab">试试实时互动设计 ↓</a></div>
     </div>
+  </div>
+</section>
+
+<!-- 04 OVERVIEW (5-minute read) -->
+<section class="dark overview" id="overview">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="en-cap">In 5 minutes</span><span class="rule"></span></div>
+    <h2 class="ov-h reveal">5 分钟，看懂我们能为你做什么</h2>
+    <div class="ov-grid">
+      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-briefcase"/></svg></span><b>我们做什么</b><p>三项服务：营销短视频、个人品牌 IP 内容、AI Motion Graphic 动态视觉。</p></div>
+      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-bulb"/></svg></span><b>为什么不一样</b><p>先想清楚“为什么有人要看”，再拍摄、再设计，而不只是拍完剪完交片。</p></div>
+      <div class="ov-card reveal"><span class="ov-ico"><svg class="icon"><use href="#i-palette"/></svg></span><b>你会得到什么</b><p>有创意、有画面、有方向的内容，视觉按你的品牌、颜色与行业量身制作。</p></div>
+    </div>
+    <div class="ov-path reveal"><span class="en-cap">建议这样看</span>
+      <a href="#services"><i>1</i>看服务与作品<em>约 2 分钟</em></a><a href="#design-lab"><i>2</i>亲手试试设计<em>约 1 分钟</em></a><a href="#why"><i>3</i>为什么选我们<em>约 1 分钟</em></a><a href="#contact"><i>4</i>PM 我们<em>随时</em></a></div>
   </div>
 </section>
 
@@ -1310,6 +1425,7 @@
     <div class="eyebrow reveal"><span class="en-cap">Other Works</span><span class="rule"></span></div>
     <p class="svc-sub reveal" style="margin-bottom:34px;">Plus more — different brands, industries and styles. A few of them to browse.</p>
     <div class="vgrid reveal"><button class="vcard" type="button" data-vid="1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv" data-title="Togeya 预告片" data-sub="Trailer"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1Qsu6yHaat4WmkSuHfnTGqG-1JlKtxScv&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>Togeya 预告片</b><em>Trailer</em></span></button><button class="vcard" type="button" data-vid="1vMybvVv19NG42--yd1I4KsGgTAyf7Eug" data-title="珠心算比赛活动" data-sub="Event"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1vMybvVv19NG42--yd1I4KsGgTAyf7Eug&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>珠心算比赛活动</b><em>Event</em></span></button><button class="vcard" type="button" data-vid="1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq" data-title="TX 投资交易商学院" data-sub="Campus 01"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1RbEx5tDubm388jqBkjQ_g7OqaVPeRUfq&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院</b><em>Campus 01</em></span></button><button class="vcard" type="button" data-vid="1A32CtPChhSigNk79SVDF67lKEzSZHXWi" data-title="TX 投资交易商学院" data-sub="Campus 02"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1A32CtPChhSigNk79SVDF67lKEzSZHXWi&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院</b><em>Campus 02</em></span></button><button class="vcard" type="button" data-vid="1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX" data-title="TX 投资交易商学院" data-sub="Campus 03"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1zVyvjoI7WVEjbWofNDyvE-L8KVLKvjLX&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院</b><em>Campus 03</em></span></button><button class="vcard" type="button" data-vid="16w6tKYsIjBHlDyZVEswmzDI97eTLQolc" data-title="TX 投资交易商学院" data-sub="Campus 04"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=16w6tKYsIjBHlDyZVEswmzDI97eTLQolc&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>TX 投资交易商学院</b><em>Campus 04</em></span></button><button class="vcard" type="button" data-vid="13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0" data-title="Gx Bank" data-sub="Brand"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=13t5yInBlPvM-gKZzLO5w1eYIvuQ1Jqq0&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>Gx Bank</b><em>Brand</em></span></button><button class="vcard" type="button" data-vid="1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF" data-title="AI 房地产" data-sub="AI Property"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1EXZn2FKccuuIukAqPjdqHtBgwxot4SPF&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>AI 房地产</b><em>AI Property</em></span></button><button class="vcard" type="button" data-vid="1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6" data-title="Dr. Chong" data-sub="Feature"><span class="vthumb" style="--th:url(https://drive.google.com/thumbnail?id=1NpaOMbvDDFjV4JM2BrdXWJyvpVfzy3U6&sz=w640)"><span class="vplay"></span></span><span class="vmeta"><b>Dr. Chong</b><em>Feature</em></span></button></div>
+    <div class="pf-open-row reveal"><a class="svc-discuss big open-pf" href="#portfolio">查看全部作品 Portfolio →</a><br><a class="pf-other-link" href="https://emerspace.wixsite.com/emer/project1" target="_blank" rel="noopener">Emer 过往累积的作品 ↗</a></div>
   </div>
 </section>
 
@@ -1434,7 +1550,7 @@
       frame.src='https://drive.google.com/file/d/'+c.dataset.vid+'/preview';
       vt.textContent=c.dataset.title;
       vn.textContent=c.dataset.seg?('精选片段 '+c.dataset.seg+'（请拖动进度条到此时间观看）'):'';
-      modal.classList.toggle('portrait',!!c.closest('.sv-rail'));
+      modal.classList.toggle('portrait',!!c.closest('.sv-rail')||c.dataset.r==='p');
       modal.classList.add('open');modal.setAttribute('aria-hidden','false');
     }
     function closeV(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');frame.src='about:blank';}
@@ -1636,10 +1752,41 @@
     })();
     // floating CTA
     (function(){const f=document.getElementById('floatCta');if(!f)return;const t=()=>f.classList.toggle('show',scrollY>innerHeight*.7);addEventListener('scroll',t,{passive:true});t();})();
+
+    // ---- portfolio view ----
+    (function(){
+      const pf=document.getElementById('portfolio'); if(!pf) return;
+      const grid=document.getElementById('pfGrid'), cards=[...grid.children], tabs=[...document.querySelectorAll('.pf-tab')], cnt=document.getElementById('pfCount'), sc=document.getElementById('pfScroll');
+      const vis=(c,cat)=>cat==='all'?c.dataset.hall!=='1':c.dataset.cat===cat;
+      tabs.forEach(t=>t.querySelector('i').textContent=cards.filter(c=>vis(c,t.dataset.cat)).length);
+      function filter(cat){
+        tabs.forEach(t=>t.classList.toggle('on',t.dataset.cat===cat));
+        let n=0;cards.forEach(c=>{const v=vis(c,cat);c.classList.toggle('hide',!v);if(v){c.style.setProperty('--n',n++);c.style.animation='none';void c.offsetWidth;c.style.animation='';}});
+        cnt.textContent=n+' VIDEOS';sc.scrollTo({top:0,behavior:'smooth'});
+      }
+      tabs.forEach(t=>t.addEventListener('click',()=>filter(t.dataset.cat)));
+      let prev=0;
+      function open(){pf.classList.add('open');pf.setAttribute('aria-hidden','false');document.body.classList.add('pf-lock');filter('all');}
+      function close(){pf.classList.remove('open');pf.setAttribute('aria-hidden','true');document.body.classList.remove('pf-lock');}
+      function route(){ if(location.hash==='#portfolio') open(); else if(pf.classList.contains('open')) close(); }
+      addEventListener('hashchange',route);
+      document.addEventListener('click',e=>{const a=e.target.closest('a.open-pf');if(!a)return;e.preventDefault();prev=scrollY;
+        const mp=document.getElementById('mobileNavPanel');if(mp&&mp.classList.contains('open'))mp.classList.remove('open');
+        if(location.hash!=='#portfolio')location.hash='portfolio'; else open();});
+      document.getElementById('pfBack').addEventListener('click',()=>{ if(location.hash==='#portfolio'){history.length>1?history.back():(location.hash='');} else close(); if(location.hash==='#portfolio')location.hash=''; });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&pf.classList.contains('open')&&!document.getElementById('vModal').classList.contains('open')){document.getElementById('pfBack').click();} });
+      route();
+    })();
     // depth hero (mouse + scroll parallax) and sticky "why" scene
     const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hero=document.getElementById('top'), glow=document.getElementById('h3dGlow'), copy=document.getElementById('h3dCopy');
-    const phs=[...document.querySelectorAll('.ph')], word=document.querySelector('.h3d-word');
+    const track=document.getElementById('h3dTrack'), hw=document.getElementById('hw'), logo=document.getElementById('h3dLogo'), cue=document.getElementById('h3dCue');
+    // Optional: real autoplay background. Put direct mp4 links (or YouTube ids) here, keyed by the Drive file id.
+    // e.g. WALL_VIDEOS['1V9tBOlN-_2-zzSdMxZ511aBzQaHbHDmT']={mp4:'videos/reel1.mp4'}  or  {yt:'YOUTUBE_ID'}
+    const WALL_VIDEOS={};
+    document.querySelectorAll('.wt[data-vid]').forEach(t=>{const v=WALL_VIDEOS[t.dataset.vid];if(!v)return;
+      if(v.mp4){const e=document.createElement('video');e.src=v.mp4;e.muted=true;e.loop=true;e.autoplay=true;e.playsInline=true;e.setAttribute('muted','');t.appendChild(e);e.play&&e.play().catch(()=>{});}
+      else if(v.yt){const e=document.createElement('iframe');e.src='https://www.youtube.com/embed/'+v.yt+'?autoplay=1&mute=1&loop=1&playlist='+v.yt+'&controls=0&modestbranding=1&playsinline=1';e.allow='autoplay';t.appendChild(e);}});
     let mx=0,my=0,cx=0,cy=0;
     hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;
       glow.style.setProperty('--gx',(e.clientX-r.left)+'px');glow.style.setProperty('--gy',(e.clientY-r.top)+'px');});
@@ -1650,16 +1797,13 @@
     function frameLoop(){
       cx+=(mx-cx)*.07; cy+=(my-cy)*.07;
       const y=window.scrollY, vh=window.innerHeight;
-      if(y<vh*1.2){
-        const p=Math.min(1,y/vh);
-        phs.forEach(el=>{const d=parseFloat(getComputedStyle(el).getPropertyValue('--d'))||.5;
-          const k=reduce?0:1;
-          el.style.setProperty('--tx',(-cx*d*70*k)+'px');
-          el.style.setProperty('--ty',(-cy*d*50*k - y*d*.55)+'px');
-          el.style.setProperty('--s',1+p*d*.35);});
-        if(word) word.style.transform='translate(calc(-50% + '+(-cx*20)+'px),calc(-50% + '+(y*.12)+'px))';
-        copy.style.transform='translateY('+(y*.25)+'px)';
-        copy.style.opacity=Math.max(0,1-p*1.3);
+      if(track){
+        const tot=Math.max(1,track.offsetHeight-vh), p=Math.max(0,Math.min(1,y/tot));
+        if(y<track.offsetHeight){
+          const lo=1-Math.max(0,Math.min(1,(p-.2)/.3)), co=Math.max(0,Math.min(1,(p-.45)/.3));
+          copy.style.opacity=co.toFixed(3); copy.style.transform='translate(-50%,calc(-50% + '+((1-co)*40)+'px))'; copy.classList.toggle('on',co>.6);
+          const k=reduce?0:1; hw.style.setProperty('--wx',(-cx*26*k)+'px'); hw.style.setProperty('--wy',(-cy*18*k)+'px'); hw.style.setProperty('--ws',(1.15+p*.12).toFixed(3));
+        }
       }
       pars.forEach(el=>{const r=el.parentElement.getBoundingClientRect();
         if(r.bottom>-200&&r.top<vh+200) el.style.transform='translateY('+((r.top+r.height/2-vh/2)*parseFloat(el.dataset.par))+'px)';});
@@ -1734,7 +1878,24 @@
   // =========================================================
   // Hero logo mark reuses the header logo image (one base64 copy).
   const heroLogoMarkEl = document.getElementById('heroLogoMark');
+  
+  // ---- horizontal accordion for services
+  (function(){const acc=document.getElementById('acc'); if(!acc)return; const ps=[...acc.querySelectorAll('.svp')]; let closeT;
+    function bw(){const free=acc.clientWidth-28; acc.style.setProperty('--bw',Math.round(free/1.18)+'px');}
+    bw(); addEventListener('resize',bw);
+    function setOn(n){clearTimeout(closeT);
+      if(!n){acc.classList.remove('open');closeT=setTimeout(()=>{delete acc.dataset.on;ps.forEach(p=>{p.classList.remove('on');p.querySelector('.sv-tab').setAttribute('aria-expanded',false);});},900);return;}
+      bw(); ps.forEach((p,i)=>{const on=(i+1)===n;p.classList.toggle('on',on);p.querySelector('.sv-tab').setAttribute('aria-expanded',on);});
+      void acc.offsetWidth; acc.dataset.on=n; acc.classList.add('open');
+      const r=ps[n-1].querySelector('.sv-rail'); if(r){r.scrollLeft=0;[60,950].forEach(t=>setTimeout(()=>r.dispatchEvent(new Event('scroll')),t));}
+      if(innerWidth<=900)setTimeout(()=>ps[n-1].scrollIntoView({behavior:'smooth',block:'start'}),50);
+    }
+    ps.forEach((p,i)=>{p.querySelector('.sv-tab').addEventListener('click',()=>setOn(i+1));p.querySelector('.sv-close').addEventListener('click',()=>setOn(0));});
+    window.openService=setOn;
+    if(/^#svc-0[1-3]$/.test(location.hash))setOn(+location.hash.slice(-1));
+  })();
   const headerLogoEl = document.querySelector('header.site .brand-logo');
+  { const hl=document.getElementById('h3dLogoImg'); if(hl && headerLogoEl) hl.src=headerLogoEl.src; }
   if(heroLogoMarkEl && headerLogoEl){ heroLogoMarkEl.src = headerLogoEl.src; }
 
   const emerGallery = [
